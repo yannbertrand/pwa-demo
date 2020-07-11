@@ -111,5 +111,19 @@
         </div>
       </main>
     </div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+              console.log('😎 Le Service Worker est enregistré', registration);
+            })
+            .catch(error => {
+              console.error('😥 L\'enregistrement ne s\'est pas bien passé :', error);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
