@@ -4,6 +4,29 @@
     <title>Exemple de PWA</title>
     <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16x16.png">
+    <link rel="preload" href="fonts/quicksand.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="breaking-bad/bb-poster.jpg" as="image">
+    <link rel="preload" href="dexter/dexter-poster.jpg" as="image">
+    <link rel="preload" href="game-of-thrones/got-poster.jpg" as="image">
+    <link rel="preload" href="greys-anatomy/ga-poster.jpg" as="image">
+    <style>
+      header#navbar {
+        position: sticky;
+        top: 0px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(0, 197, 142);
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+        color: #fff;
+        padding: 1.2rem;
+        font-size: 1.3rem;
+      }
+      nav a {
+        color: #fff;
+      }
+    </style>
     <link rel="stylesheet" href="index.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
