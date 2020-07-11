@@ -2,10 +2,22 @@ const CURRENT_CACHE_NAME = 'v1';
 
 self.addEventListener('install', event => {
   console.log('⤵️ Installation du Service Worker...');
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
   console.log('🤖 Activation du Service worker...');
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheName !== CURRENT_CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
 });
 
 self.addEventListener('fetch', event => {
